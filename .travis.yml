@@ -8,8 +8,9 @@ install:
 
 before_script: 
   - cd Backend/
-  - cd django-back/
+  - pipenv shell
 script: 
+  - cd django-back/
   - python manage.py test
 
 deploy:
