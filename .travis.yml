@@ -1,0 +1,14 @@
+languaje: python
+python:
+  - "3.6"
+install:
+  - "pip install pipenv"
+  - "pipenv install --dev"
+deploy:
+  provider: heroku
+  skip-cleanup: true
+  keep-history: true
+  api-key: ceb5ac04-5ab8-4ccf-b813-f22b4865abfb
+  app: energycorp
+  on: 
+    repo: esneidermanzano/energyCorp/
