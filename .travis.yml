@@ -2,15 +2,17 @@ languaje: python
 python:
   - "3.6"
 
-install:
-  - "pip install pipenv"
-  - "pipenv install"
+env:
+  - DJANGO=3.0
 
-before_script: 
+install:
+  - "pip install -r requirements.txt"
+
+before_script:
   - cd Backend/
-  - pipenv shell
-script: 
   - cd django-back/
+
+script: 
   - python manage.py test
 
 deploy:
