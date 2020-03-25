@@ -23,4 +23,5 @@ deploy:
   api-key: ceb5ac04-5ab8-4ccf-b813-f22b4865abfb
   app: energycorp
   on: 
-    repo: esneidermanzano/energyCorp/
+    repo: esneidermanzano/energyCorp
+    branch: master
