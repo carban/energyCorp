@@ -8,9 +8,10 @@ install:
 
 before_script: 
   - cd Backend/
+  - cd src/
 script: 
   - python manage.py test
-  
+
 deploy:
   provider: heroku
   skip-cleanup: true
