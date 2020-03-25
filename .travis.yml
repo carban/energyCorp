@@ -1,9 +1,13 @@
 languaje: python
 python:
   - "3.6"
+
 install:
   - "pip install pipenv"
   - "pipenv install --dev"
+
+before_script: cd Backend/
+script: python manage.py test
 deploy:
   provider: heroku
   skip-cleanup: true
