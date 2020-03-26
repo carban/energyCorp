@@ -1,0 +1,10 @@
+version: "3"
+services:
+  django:
+    container_name: django_server
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: docker_tutorial_django
+    ports:
+      - 8000:8000
