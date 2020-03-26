@@ -7,6 +7,7 @@ env:
 
 before_install:
   - cd Backend/
+
 install:
   - "pip3 install -r requirements.txt"
 
@@ -15,6 +16,9 @@ before_script:
 
 script: 
   - python manage.py test
+
+after_script:
+  - cd .. && cd ..
 
 deploy:
   provider: heroku
