@@ -25,7 +25,11 @@ SECRET_KEY = 'owqu_%57jjdxfdd-ckhc)p@49bfzc#1h@ei&wlyaqg&#23grr&'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    '0.0.0.0',
+    'localhost',
+    'energycorp.herokuapp.com'
+]
 
 
 # Application definition
