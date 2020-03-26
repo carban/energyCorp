@@ -5,20 +5,11 @@ python:
 env:
   - DJANGO=3.0
 
-before_install:
-  - cd Backend/
-
 install:
-  - "pip3 install -r requirements.txt"
-
-before_script:
-  - cd src/
+  - "pip install -r Backend/requirements.txt"
 
 script: 
-  - python manage.py test
-
-after_script:
-  - cd .. && cd ..
+  - python Backend/src/manage.py test
 
 deploy:
   provider: heroku
