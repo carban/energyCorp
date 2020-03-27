@@ -1,4 +1,5 @@
 version: "3"
+#This file is only to local test, it's useless with travis
 services:
   django:
     container_name: django_server

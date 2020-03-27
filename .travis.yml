@@ -1,25 +1,12 @@
-languaje: python
-python:
-  - "3.6"
-
-env:
-  - DJANGO=3.0
-
-before_install:
-  - cd Backend/
-
+language: node_js
+node_js:
+  - "node"
+warnings_are_errors: false
 install:
-  - "pip install -r requirements.txt"
-
-script: 
-  - python src/manage.py test
-
+  - npm install
+script:
+  - npm run build
 deploy:
-  provider: heroku
-  skip-cleanup: true
-  keep-history: true
-  api-key: ceb5ac04-5ab8-4ccf-b813-f22b4865abfb
-  app: energycorp
-  on: 
-    repo: esneidermanzano/energyCorp
-    branch: master
+  provider: firebase
+  skip_cleanup: true
+  token: 1//05NXJazybgtlkCgYIARAAGAUSNgF-L9Iriv9qGIxnlwMDQ7LccmHXDX_PJkbqDxm9dmn3QdVTaV8HoNMTidWfI2OkFGir4HI4xg

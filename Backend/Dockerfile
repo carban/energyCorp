@@ -12,6 +12,8 @@ RUN pip install -r requirements.txt
 RUN adduser -D myuser
 USER myuser
 
+#If you wanna test with compose, enable the follow lines
+
 #EXPOSE 8000
 
 #ENTRYPOINT ["python", "manage.py"]
