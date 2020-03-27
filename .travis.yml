@@ -14,4 +14,4 @@ notificatios
 deploy:
   provider: firebase
   skip_cleanup: true
-  token: 1//05NXJazybgtlkCgYIARAAGAUSNgF-L9Iriv9qGIxnlwMDQ7LccmHXDX_PJkbqDxm9dmn3QdVTaV8HoNMTidWfI2OkFGir4HI4xg
+  token: $FIRE_TOKEN
