@@ -10,8 +10,9 @@ language: node_js
 
 jobs:
   include:
+    # ======== Parte del frontend ========
     - stage: frontend
-      # ======== Parte del frontend ========
+      language: node_js
       warnings_are_errors: false
 
       cache: 
