@@ -35,7 +35,8 @@ matrix:
 
       branches:
         only:
-          - Cucho
+          - master
+
       env:
         - DJANGO=3.0
 
