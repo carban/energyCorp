@@ -1,0 +1,11 @@
+version: "3"
+#This file is only to local test, it's useless with travis
+services:
+  django:
+    container_name: django_server
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: docker_tutorial_django
+    ports:
+      - 8000:8000
