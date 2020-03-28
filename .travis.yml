@@ -2,6 +2,13 @@ language: node_js
 node_js:
   - "node"
 warnings_are_errors: false
+
+branches:
+  only:
+    - master
+    - Cucho
+
+
 before_install: 
   - cd Frontend/
 
@@ -15,7 +22,7 @@ after_success:
 
 
 #Comentario para probar branch
-notificatios
+
 deploy:
   provider: firebase
   skip_cleanup: true
