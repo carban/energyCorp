@@ -1,27 +1,56 @@
-language: node_js
-node_js:  '12'
+matrix:
+  include:
+    - language: node_js
+      node_js:  '12'
 
-warnings_are_errors: false
+      warnings_are_errors: false
 
-cache: npm
+      cache: npm
 
-branches:
-  only:
-    - master
-    - Cucho
+      branches:
+        only:
+          - master
+          - Cucho
 
 
-before_install: 
-  - cd Frontend/
+      before_install: 
+        - cd Frontend/
 
-install:
-  - npm install
-script:
-  - npm run build
+      install:
+        - npm install
+      script:
+        - npm run build
 
-#Comentario para probar branch
+      #Comentario para probar branch
 
-deploy:
-  provider: firebase
-  skip_cleanup: true
-  token: $FIRE_TOKEN
+      deploy:
+        provider: firebase
+        skip_cleanup: true
+        token: $FIRE_TOKEN
+    
+    
+    - languaje: python
+      python:
+        - "3.6"
+
+      env:
+        - DJANGO=3.0
+
+      before_install:
+        - cd Backend/
+
+      install:
+        - "pip install -r requirements.txt"
+
+      script: 
+        - python src/manage.py test
+
+      deploy:
+        provider: heroku
+        skip-cleanup: true
+        keep-history: true
+        api-key: ceb5ac04-5ab8-4ccf-b813-f22b4865abfb
+        app: energycorp
+        on: 
+          repo: esneidermanzano/energyCorp
+          branch: master
