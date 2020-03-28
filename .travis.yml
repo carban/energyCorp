@@ -4,12 +4,14 @@ os: linux
 git:
   depth: 3 
 
+language: node_js
+  node_js:  
+    - "12"
+
 jobs:
   include:
-    # ======== Parte del frontend ========
-    - language: node_js
-      node_js:  '12'
-
+    - stage: frontend
+      # ======== Parte del frontend ========
       warnings_are_errors: false
 
       cache: 
@@ -30,36 +32,38 @@ jobs:
 
       deploy:
         provider: firebase
-        skip_cleanup: true
+        cleanup: true
         token: $FIRE_TOKEN
     
     # ======== Parte de Backend ========
-    - language: python
+  - stage: backend
+    language: python
       python:
         - "3.6"
 
-      cache: pip
+    cache: pip
 
-      branches:
-        only:
-          - master
+    branches:
+      only:
+        - master
 
-      env:
-        - DJANGO=3.0
+    env:
+      - DJANGO=3.0
 
-      before_install:
-        - cd Backend/
+    before_install:
+      - cd Backend/
 
-      install:
-        - "pip install -r requirements.txt"
+    install:
+      - "pip install -r requirements.txt"
 
-      script: 
-        - python src/manage.py test
+    script: 
+      - python src/manage.py test
 
-      deploy:
-        provider: heroku
-        api_key: ceb5ac04-5ab8-4ccf-b813-f22b4865abfb
-        app: energycorp
-        on: 
-          repo: esneidermanzano/energyCorp
-          branch: master
+    deploy:
+      provider: heroku
+      cleanup: true
+      api_key: $HEROKU_TOKEN
+      app: energycorp
+      on: 
+        repo: esneidermanzano/energyCorp
+        branch: master
