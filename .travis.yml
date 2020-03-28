@@ -10,8 +10,6 @@ matrix:
       branches:
         only:
           - master
-          - Cucho
-
 
       before_install: 
         - cd Frontend/
@@ -28,11 +26,16 @@ matrix:
         skip_cleanup: true
         token: $FIRE_TOKEN
     
-    
+
     - languaje: python
       python:
         - "3.6"
 
+      cache: pip
+
+      branches:
+        only:
+          - Cucho
       env:
         - DJANGO=3.0
 
